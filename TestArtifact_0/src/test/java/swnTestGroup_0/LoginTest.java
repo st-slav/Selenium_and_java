@@ -17,7 +17,7 @@ public class LoginTest extends swnTestGroup_0.pages.TestBase {
   @Test
   public void testUntitled() throws Exception {
 
-    driver.get(baseUrl + "/?c=portal");
+    driver.get(baseUrl /*+ "/?c=portal"*/);
     driver.findElement(By.linkText("Промед")).click();
     driver.findElement(By.id("promed-login")).clear();
     driver.findElement(By.id("promed-login")).sendKeys("Lputest21");
