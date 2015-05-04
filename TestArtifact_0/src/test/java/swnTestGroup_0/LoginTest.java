@@ -20,9 +20,9 @@ public class LoginTest extends swnTestGroup_0.pages.TestBase {
     driver.get(baseUrl /*+ "/?c=portal"*/);
     driver.findElement(By.linkText("Промед")).click();
     driver.findElement(By.id("promed-login")).clear();
-    driver.findElement(By.id("promed-login")).sendKeys("Lputest21");
+    driver.findElement(By.id("promed-login")).sendKeys("Admin");
     driver.findElement(By.id("promed-password")).clear();
-    driver.findElement(By.id("promed-password")).sendKeys("Lputest21");
+    driver.findElement(By.id("promed-password")).sendKeys("AmoKK");
     driver.findElement(By.id("auth_submit")).click();
   }
 

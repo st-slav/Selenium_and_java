@@ -15,6 +15,9 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 
+import swnTestGroup_0.applogic.ApplicationManager;
+import swnTestGroup_0.applogic0.ApplicationManager0;
+import swnTestGroup_0.applogic1.ApplicationManager1;
 import swnTestGroup_0.util.PropertyLoader;
 import swnTestGroup_0.util.Browser;
 import swnTestGroup_0.webdriver.WebDriverFactory;
@@ -26,19 +29,24 @@ import swnTestGroup_0.webdriver.WebDriverFactory;
  */
 
 public class TestBase {
+	protected WebDriver driver; //!!!!!
+/*
 	private static final String SCREENSHOT_FOLDER = "target/screenshots/";
 	private static final String SCREENSHOT_FORMAT = ".png";
-
 	protected WebDriver driver;
-
 	protected String gridHubUrl;
-
 	protected String baseUrl;
-
 	protected Browser browser;
+*/
+	
+	protected ApplicationManager app;
 
 	@BeforeClass
 	public void init() {
+		
+		app = new ApplicationManager1();
+		
+/*
 		baseUrl = PropertyLoader.loadProperty("site.url");
 		gridHubUrl = PropertyLoader.loadProperty("grid2.hub");
 
@@ -53,6 +61,9 @@ public class TestBase {
 		driver = WebDriverFactory.getInstance(gridHubUrl, browser, username,
 				password);
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		
+		//app = new ApplicationManager0();
+*/
 	}
 
 	@AfterSuite(alwaysRun = true)
