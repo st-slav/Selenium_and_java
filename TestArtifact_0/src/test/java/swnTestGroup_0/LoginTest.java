@@ -15,7 +15,7 @@ public class LoginTest extends swnTestGroup_0.pages.TestBase {
   private StringBuffer verificationErrors = new StringBuffer();
 
   @Test
-  public void testUntitled() throws Exception {
+  public void InRIAMS() throws Exception {
 
     driver.get(baseUrl /*+ "/?c=portal"*/);
     driver.findElement(By.linkText("Промед")).click();
@@ -25,7 +25,12 @@ public class LoginTest extends swnTestGroup_0.pages.TestBase {
     driver.findElement(By.id("promed-password")).sendKeys("AmoKK");
     driver.findElement(By.id("auth_submit")).click();
   }
-
+  
+  @Test
+  public void ExitRIAMS() throws Exception {
+	  
+  }
+/* шляпа какая-то 
   private boolean isElementPresent(By by) {
     try {
       driver.findElement(by);
@@ -48,5 +53,5 @@ public class LoginTest extends swnTestGroup_0.pages.TestBase {
     } finally {
       acceptNextAlert = true;
     }
-  }
+  }*/
 }
