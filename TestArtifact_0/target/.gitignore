@@ -4,3 +4,5 @@
 /generated-test-sources/**
 /maven-status/**
 /surefire-reports/**
+/classes/
+/test-classes/
