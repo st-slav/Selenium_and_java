@@ -10,25 +10,35 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 
+import swnTestGroup_0.model.User;
+
 public class LoginTest extends swnTestGroup_0.pages.TestBase {
   private boolean acceptNextAlert = true;
   private StringBuffer verificationErrors = new StringBuffer();
 
   @Test
   public void InRIAMS() throws Exception {
-
-    driver.get(baseUrl /*+ "/?c=portal"*/);
+	  User user = new User().setLogin("KunPsiho12").setPassword("KunPsiho12");
+	  app.getBaseHelper().LoginIn(user);
+	  /*
+    driver.get(baseUrl /*+ "/?c=portal");
     driver.findElement(By.linkText("Промед")).click();
     driver.findElement(By.id("promed-login")).clear();
     driver.findElement(By.id("promed-login")).sendKeys("Admin");
     driver.findElement(By.id("promed-password")).clear();
     driver.findElement(By.id("promed-password")).sendKeys("AmoKK");
     driver.findElement(By.id("auth_submit")).click();
+    */
+    assertTrue(app.getBaseHelper().isLogged());
   }
   
   @Test
   public void ExitRIAMS() throws Exception {
-	  
+	  if (app.getBaseHelper().isnotLogged()){
+		  return;
+	  }
+      app.getBaseHelper().logout();	  
+	assertTrue(app.getBaseHelper().isnotLogged());
   }
 /* шляпа какая-то 
   private boolean isElementPresent(By by) {
