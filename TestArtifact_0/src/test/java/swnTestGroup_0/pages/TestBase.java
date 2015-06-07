@@ -29,7 +29,7 @@ import swnTestGroup_0.webdriver.WebDriverFactory;
  */
 
 public class TestBase {
-	protected WebDriver driver; //!!!!!
+	//protected WebDriver driver; //!!!!!
 /*
 	private static final String SCREENSHOT_FOLDER = "target/screenshots/";
 	private static final String SCREENSHOT_FORMAT = ".png";
@@ -66,11 +66,9 @@ public class TestBase {
 */
 	}
 
-	@AfterSuite(alwaysRun = true)
-	public void tearDown() {
-		if (driver != null) {
-			driver.quit();
-		}
+	@AfterSuite
+	public void stop(){
+		app.stop();
 	}
 
 //	@AfterMethod

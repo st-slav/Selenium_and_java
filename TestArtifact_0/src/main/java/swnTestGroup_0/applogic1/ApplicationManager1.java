@@ -13,7 +13,8 @@ import swnTestGroup_0.webdriver.WebDriverFactory;
 public class ApplicationManager1 implements ApplicationManager {
 
 	private BaseHelper baseHelper;
-	private String baseUrl;	
+	
+	private String baseUrl;		
 	private WebDriver driver;
 	
 	public ApplicationManager1() {
@@ -30,15 +31,21 @@ public class ApplicationManager1 implements ApplicationManager {
 		String password = PropertyLoader.loadProperty("user.password");
 		
 		driver = WebDriverFactory.getInstance(gridHubUrl, browser, username, password);
-		//driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		//driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS); //неявные ожидания
 		
 		//app = new ApplicationManager0();
+		
+		baseHelper = new BaseHelper1(this); //this чтоб хелперы могли общаться через менеджера
 		
 	}
 	
 	@Override
 	public BaseHelper getBaseHelper(){
 		return baseHelper;
+	}
+	
+	protected WebDriver getWebDriver(){
+		return driver;
 	}
 	
 	@Override

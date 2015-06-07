@@ -1,6 +1,13 @@
 package swnTestGroup_0.pages;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.TimeoutException;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+//import ru.st.selenium.pages.Page; - не понял откуда взялось, во время рефакторинга надо удалить
+//import ru.st.selenium.pages.TimeoutException;
+
+//базовый класс общее для страницы как объекта
 
 /*
  * Abstract class representation of a Page in the UI. Page object pattern
@@ -9,23 +16,48 @@ import org.openqa.selenium.WebDriver;
  */
 public abstract class Page {
 
-	protected WebDriver webDriver;
+	protected WebDriver driver;
+	protected WebDriverWait wait;
+	protected PageManager pages;
 
 	/*
 	 * Constructor injecting the WebDriver interface
 	 * 
 	 * @param webDriver
 	 */
+	
+	public Page(PageManager pages) {
+		this.pages = pages;
+	    driver = pages.getWebDriver();
+	    wait = new WebDriverWait(driver, 10); 
+	}
+	/*
 	public Page(WebDriver webDriver) {
 		this.webDriver = webDriver;
-	}
+	}*/
 
 	public WebDriver getWebDriver() {
-		return webDriver;
+		return driver;
 	}
 
+	//заголовок страницы
 	public String getTitle() {
-		return webDriver.getTitle();
+		return driver.getTitle();
+	}
+	
+	//ждёт загрузки страницы и возвращает её имя
+	public Page ensurePageLoaded() {
+		return this;
+	}
+
+	//ждёт загрузки страницы и возвращает 1 или 0
+	public boolean waitPageLoaded() {
+		try {
+			ensurePageLoaded();
+			return true;
+		} catch (TimeoutException to) {
+			return false;
+		}
 	}
 
 }
