@@ -5,7 +5,7 @@ public class User {
 	private String login;
 	private String password;
 	
-	private String getLogin() {
+	public String getLogin() {
 		return login;
 	}
 	
@@ -14,7 +14,7 @@ public class User {
 		return this;
 	}
 	
-	private String getPassword() {
+	public String getPassword() {
 		return password;
 	}
 	

@@ -35,7 +35,7 @@ public class LoginPage extends Page{
 		authButton.click();
 	}
 	
-	public LoginPage encurePageLoaded(){
+	public LoginPage ensurePageLoaded(){
 		super.ensurePageLoaded();
 		wait.until(presenceOfElementLocated(By.xpath("//button[@id='auth_submit']")));
 		return this;

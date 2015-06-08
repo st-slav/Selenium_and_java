@@ -11,17 +11,23 @@ public class BaseHelper1 extends DriverBasedHelper implements BaseHelper {
 	
 	@Override
 	public void LoginIn(User user){
-		
+		pages.startPage
+			.ensurePageLoaded()
+			.clickPromedLink()
+			.ensurePageLoaded()
+			.setLoginField(user.getLogin())
+			.setPassField(user.getPassword())
+			.clickAuthButton();
 	}
-	
+
 	@Override
 	public boolean isnotLogged(){
-		
+
 	}
-	
+
 	@Override
 	public boolean isLogged(){
-		
+		return pages.topMenuClassic.waitPageLoaded();
 	}
 	
 	@Override

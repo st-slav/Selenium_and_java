@@ -4,9 +4,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-//import ru.st.selenium.pages.Page; - не понял откуда взялось, во время рефакторинга надо удалить
-//import ru.st.selenium.pages.TimeoutException;
-
 //базовый класс общее для страницы как объекта
 
 /*

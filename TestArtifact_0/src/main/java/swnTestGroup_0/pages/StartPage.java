@@ -15,11 +15,12 @@ public class StartPage extends Page {
 	@FindBy(xpath = "//div[@class='title']/a[@href='?c=portal&m=promed']")
 	private WebElement promedLink;
 	
-	public void clickPromedLink(){
+	public LoginPage clickPromedLink(){
 		promedLink.click();
+		return pages.loginPage;
 	}
 	
-	public StartPage encurePageLoaded(){
+	public StartPage ensurePageLoaded(){
 		super.ensurePageLoaded();
 		wait.until(presenceOfElementLocated(By.xpath("//div[@class='title']/a[@href='?c=portal&m=promed']")));
 		return this;

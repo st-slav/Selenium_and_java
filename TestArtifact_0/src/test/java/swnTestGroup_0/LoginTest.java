@@ -40,6 +40,8 @@ public class LoginTest extends swnTestGroup_0.pages.TestBase {
       app.getBaseHelper().logout();	  
 	assertTrue(app.getBaseHelper().isnotLogged());
   }
+  
+  
 /* шл€па кака€-то 
   private boolean isElementPresent(By by) {
     try {

@@ -22,7 +22,7 @@ public class PageManager {
 		this.driver = driver;
 		startPage = initElements(new StartPage(this));
 		loginPage = initElements(new LoginPage(this));
-		topMenuClassic = initElement(new TopMenuClassic(this));
+//		topMenuClassic = initElement(new TopMenuClassic(this));
 	}
 	
 	//инициализация объекта страницы (связывание страниц с драйвером)
