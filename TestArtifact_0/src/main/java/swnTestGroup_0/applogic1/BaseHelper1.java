@@ -22,7 +22,7 @@ public class BaseHelper1 extends DriverBasedHelper implements BaseHelper {
 
 	@Override
 	public boolean isnotLogged(){
-
+		return true;
 	}
 
 	@Override

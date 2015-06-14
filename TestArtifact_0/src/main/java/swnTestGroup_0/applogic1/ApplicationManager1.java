@@ -37,6 +37,8 @@ public class ApplicationManager1 implements ApplicationManager {
 		
 		baseHelper = new BaseHelper1(this); //this чтоб хелперы могли общаться через менеджера
 		
+		driver.get(baseUrl);
+		
 	}
 	
 	@Override
@@ -48,6 +50,10 @@ public class ApplicationManager1 implements ApplicationManager {
 		return driver;
 	}
 	
+	protected String getBaseUrl() {
+		 return baseUrl;
+	}
+
 	@Override
 	public void stop() {
 	  if (driver != null) {

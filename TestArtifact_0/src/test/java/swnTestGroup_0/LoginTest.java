@@ -30,9 +30,10 @@ public class LoginTest extends swnTestGroup_0.pages.TestBase {
     driver.findElement(By.id("auth_submit")).click();
     */
     assertTrue(app.getBaseHelper().isLogged());
+    
   }
   
-  @Test
+ // @Test
   public void ExitRIAMS() throws Exception {
 	  if (app.getBaseHelper().isnotLogged()){
 		  return;
