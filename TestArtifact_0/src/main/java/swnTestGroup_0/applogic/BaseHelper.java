@@ -8,4 +8,8 @@ public interface BaseHelper {
     void logout();
 	boolean isLogged();
 	boolean isnotLogged();
+	void selectDefaultARM();
+	void selectMO();
+	void selectARM();
+	boolean startARM();
 }

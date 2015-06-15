@@ -9,7 +9,7 @@ public class BaseHelper1 extends DriverBasedHelper implements BaseHelper {
 		super(manager.getWebDriver());
 	}
 	
-	@Override
+	@Override //Вход в систему
 	public void LoginIn(User user){
 		pages.startPage
 			.ensurePageLoaded()
@@ -27,12 +27,32 @@ public class BaseHelper1 extends DriverBasedHelper implements BaseHelper {
 
 	@Override
 	public boolean isLogged(){
-		return pages.topMenuClassic.waitPageLoaded();
+		return pages.selectionMOForm.waitPageLoaded();
 	}
 	
 	@Override
 	public void logout(){
 		
 	}
-
+	
+	@Override //выбор АРМа по умолчанию
+	public void selectDefaultARM(){
+		
+	}
+	
+	@Override //Выбор МО
+	public void selectMO(){
+		
+	}
+	
+	@Override //Выбор АРМа
+	public void selectARM(){
+		
+	}
+	
+	@Override //Выбор АРМа после загрузки 
+	public boolean startARM(){
+		return true;//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	}
+	
 }

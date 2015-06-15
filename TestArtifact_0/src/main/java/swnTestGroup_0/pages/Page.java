@@ -26,7 +26,7 @@ public abstract class Page {
 	public Page(PageManager pages) {
 		this.pages = pages;
 	    driver = pages.getWebDriver();
-	    wait = new WebDriverWait(driver, 10); 
+	    wait = new WebDriverWait(driver, 30); 
 	}
 	/*
 	public Page(WebDriver webDriver) {

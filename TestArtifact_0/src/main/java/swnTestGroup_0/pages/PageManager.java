@@ -17,12 +17,17 @@ public class PageManager {
 	public StartPage startPage;
 	public LoginPage loginPage;
 	public TopMenuClassic topMenuClassic;
+	public SelectionMOForm selectionMOForm;
+	public SelectionDefaultARMForm selectionDefaultARMForm; 
 	
 	public PageManager(WebDriver driver){
 		this.driver = driver;
 		startPage = initElements(new StartPage(this));
 		loginPage = initElements(new LoginPage(this));
-//		topMenuClassic = initElement(new TopMenuClassic(this));
+		topMenuClassic = initElements(new TopMenuClassic(this));
+		selectionMOForm = initElements(new SelectionMOForm(this));
+		selectionDefaultARMForm = initElements(new SelectionDefaultARMForm(this));
+		
 	}
 	
 	//инициализация объекта страницы (связывание страниц с драйвером)

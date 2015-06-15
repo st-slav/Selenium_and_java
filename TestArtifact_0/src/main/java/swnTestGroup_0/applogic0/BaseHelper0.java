@@ -27,4 +27,28 @@ public class BaseHelper0 implements BaseHelper {
 		return true;
 	}
 
+	@Override
+	public void selectDefaultARM() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void selectMO() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void selectARM() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public boolean startARM() {
+		// TODO Auto-generated method stub
+		return true;
+	}
+
 }
